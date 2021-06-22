@@ -1,4 +1,5 @@
-// length of the Longest Palindromic Subsequence
+// Length of the Longest Palindromic Subsequence
+// Dynamic Programming approach zg crkn
 
 // n:string size
 // Time : O(n^2)
