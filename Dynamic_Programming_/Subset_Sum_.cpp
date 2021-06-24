@@ -9,10 +9,8 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 // Return true if there exists a subset
-bool SubsetSum(vector<int>& arr, int sum)
+bool SubsetSum(std::vector<int>& arr, int sum)
 {
     int n = arr.size();
 
@@ -45,17 +43,17 @@ bool SubsetSum(vector<int>& arr, int sum)
 // -------------
 int main()
 {
-    vector<int> arr1 = { 7, 3, 2, 5, 8 };
+    std::vector<int> arr1 = { 7, 3, 2, 5, 8 };
     int sum = 18;
-    cout << "Test-1: " << SubsetSum(arr1, sum) << endl;
+    std::cout << "Test-1: " << SubsetSum(arr1, sum) << std::endl;
 
-    vector<int> arr2 = { 3, 34, 4, 12, 5, 2 };
+    std::vector<int> arr2 = { 3, 34, 4, 12, 5, 2 };
     sum = 9;
-    cout << "Test-2: " << SubsetSum(arr2, sum) << endl;
+    std::cout << "Test-2: " << SubsetSum(arr2, sum) << std::endl;
 
-    vector<int> arr3 = { 2, 4, 6, 8, 10 };
+    std::vector<int> arr3 = { 2, 4, 6, 8, 10 };
     sum = 15;
-    cout << "Test-3: " << SubsetSum(arr3, sum) << endl;
+    std::cout << "Test-3: " << SubsetSum(arr3, sum) << std::endl;
 
     return 0;
 }
