@@ -1,5 +1,6 @@
 // LeetCode-323: Number of Connected Components in an Undirected Graph
 // author: Akif Aydogmus
+// Union-Find approach
 
 #include <iostream>
 #include <vector>
@@ -22,6 +23,7 @@ int countComponents(int n, vector<vector<int>>& edges ){
 }
 
 private:
+	
 // union of 2 nodes 
 void unify (int node1, int node2, vector<int>& ids){
 	int parent1= find(node1, ids); 
@@ -35,12 +37,12 @@ void unify (int node1, int node2, vector<int>& ids){
 	}
 }
 	
-// finding the parent of node, (taking id==taking root)
+// finding the parent of node, 
 int find (int node, vector<int>& ids){
 	if ( ids[node] != node ) 
 	     ids[node] = find(ids[node], ids); 
 
-	return ids[node];  // it's root 
+	return ids[node];  
 }
 
 };
@@ -49,7 +51,6 @@ int main(void){
     int n1= 5;   vector<vector< int>> edges1 {{0,1},{1,2},{3,4}} ; 
     int n2= 5;   vector<vector< int>> edges2 {{0,1},{1,2},{2,3},{3,4}}; 
     int n3= 8;   vector<vector< int>> edges3 {{0,1},{2,1},{3,4},{5,3}, {6,7} };    
-    // ids: dbg1:  1 2 2 4 5 5 7 7,  dbg1:  2 2 2 5 5 5 7 7
     
     Solution s; 
     cout << "output-1: "<<  s.countComponents(n1, edges1) << endl;
